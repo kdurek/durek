@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "37633"
+    ports:
+      - "37633:37633"
+    restart: unless-stopped
