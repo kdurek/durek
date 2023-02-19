@@ -1,0 +1,20 @@
+---
+export interface Props {
+  label: string;
+  href: string;
+}
+const { label, href } = Astro.props;
+
+const { pathname } = new URL(Astro.request.url);
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+---
+
+<nav class="flex items-center justify-end font-bold">
+  <a
+    class:list={[
+      "py-2 px-4 transition-transform hover:scale-105 hover:opacity-100",
+      isActive ? "opacity-100" : "opacity-50",
+    ]}
+    href={href}>{label}</a
+  >
+</nav>

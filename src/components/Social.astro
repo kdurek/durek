@@ -1,0 +1,17 @@
+---
+export interface Props {
+  name: string;
+  href: string;
+}
+
+const { name, href } = Astro.props;
+---
+
+<a
+  class="h-10 w-10 rounded-full bg-white/50 p-2 text-center md:h-12 md:w-12 lg:h-14 lg:w-14 lg:p-3 xl:h-16 xl:w-16 xl:p-4"
+  href={href}
+  rel="noopener"
+  target="_blank"
+>
+  <img src={`/assets/${name}.svg`} alt={name} />
+</a>

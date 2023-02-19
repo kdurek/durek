@@ -1,0 +1,39 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+const {
+  title,
+  description = "Site about me",
+  image = "/assets/avataaars.png",
+} = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// const socialUrl = Astro.site.href + 'assets/social.png'
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<script>
+  document.documentElement.classList.add("dark");
+</script>

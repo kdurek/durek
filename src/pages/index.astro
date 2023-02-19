@@ -1,0 +1,37 @@
+---
+import Social from "../components/Social.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Strona główna | Krzysztof Durek";
+---
+
+<BaseLayout title={title}>
+  <div
+    class="flex flex-1 flex-col items-center justify-center text-center sm:flex-row-reverse sm:text-left"
+  >
+    <img
+      class="w-full max-w-sm sm:translate-x-8 md:max-w-md lg:max-w-lg xl:max-w-xl"
+      alt="Avatar trying to represent me"
+      src="/assets/avataaars.svg"
+    />
+    <div class="mt-8 sm:flex-1">
+      <h1
+        class="text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
+      >
+        Cześć,
+      </h1>
+      <h2
+        class="mt-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
+      >
+        Jestem <span class="whitespace-nowrap">Krzysztof Durek</span>
+      </h2>
+      <div class="mt-8 flex justify-center gap-4 sm:justify-start">
+        <Social name="github" href="https://github.com/kdurek" />
+        <Social
+          name="linkedin"
+          href="https://linkedin.com/in/krzysztof-durek-73a166215"
+        />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
